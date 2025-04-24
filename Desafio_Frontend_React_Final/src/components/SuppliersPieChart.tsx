@@ -4,28 +4,29 @@ import {
   PieChart, Pie, Cell, Tooltip, ResponsiveContainer
 } from "recharts";
 
-interface CategoryData {
+interface ProviderData {
   name: string;
   value: number;
 }
 
 const COLORS = ["#102E50", "#F5C45E", "#E78B48", "#BE3D2A", "#88304E", "#F7374F", "#FE7743"];
 
-const CategoryPieChart = () => {
-  const [data, setData] = useState<CategoryData[]>([]);
+const ProviderPieChart = () => {
+  const [data, setData] = useState<ProviderData[]>([]);
 
   useEffect(() => {
     axios.get("http://localhost:3000/products")
       .then((res) => {
         const products = res.data;
 
+        // Agrupar por proveedor
         const grouped: { [key: string]: number } = products.reduce((acc: { [key: string]: number }, prod: any) => {
-          const categoria = prod.categoria?.Nombre || "Sin categoría";
-          acc[categoria] = (acc[categoria] || 0) + 1;
+          const proveedor = prod.proveedor?.Nombre || "Sin proveedor";
+          acc[proveedor] = (acc[proveedor] || 0) + 1;
           return acc;
         }, {});
 
-        const formatted: CategoryData[] = Object.entries(grouped).map(([name, value]) => ({
+        const formatted: ProviderData[] = Object.entries(grouped).map(([name, value]) => ({
           name,
           value,
         }));
@@ -37,7 +38,7 @@ const CategoryPieChart = () => {
 
   return (
     <div style={{ width: "100%", height: 400, marginTop: "2rem" }}>
-      <h1 className="text-xl font-bold text-center mb-2">Categorias</h1>
+      <h1 className="text-xl font-bold text-center mb-2">Proveedores</h1>
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
@@ -48,9 +49,7 @@ const CategoryPieChart = () => {
             cy="50%"
             outerRadius={130}
             fill="#8884d8"
-//            label={false}
             label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
-
           >
             {data.map((_, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -63,4 +62,4 @@ const CategoryPieChart = () => {
   );
 };
 
-export default CategoryPieChart;
+export default ProviderPieChart;

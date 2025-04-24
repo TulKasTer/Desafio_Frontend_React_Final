@@ -36,7 +36,7 @@ const ProductQuantityBarChart = () => {
   return (
     <>
       <div style={{ width: "100%", height: 400, marginTop: "2rem" }}>
-        <h2 className="text-xl font-bold mb-2">Cantidad de cada Producto</h2>
+      <h1 className="text-xl font-bold text-center mb-2">Productos</h1>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data}>
             <CartesianGrid strokeDasharray="3 3" />
