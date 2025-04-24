@@ -45,7 +45,7 @@ export const createCategories = async (category: Omit<Category,"id">) => {
 
 export const updateCategories = async (id: number, updateCategories: Partial<Category>) => {
   try {
-    const res = await api.put(`/categories/${id}`, updateCategories);
+    const res = await api.patch(`/categories/${id}`, updateCategories);
     return res.data;
   } catch (err) {
     console.log(err);
