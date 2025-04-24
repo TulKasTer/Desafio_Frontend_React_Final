@@ -1,8 +1,6 @@
 import SideComp from "../components/SidebarComp"
 
-interface Props {}
-
-export default function Inicio(props: Props) {
+export default function Inicio() {
     return (
         <>
             <div className = "container flex is-flex-direction-column is-fullheight">

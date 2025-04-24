@@ -119,7 +119,7 @@ export default function SuppliersList() {
                         <td className="px-4 py-2">
                           {editingId === supplier.id ? (
                             <input
-                              name="Descripcion"
+                              name="Contacto"
                               value={editedSuppliers.Contacto ?? ""}
                               onChange={handleChange}
                               className="border rounded px-2 py-1"
@@ -132,10 +132,10 @@ export default function SuppliersList() {
                         <td className="px-4 py-2">
                           {editingId === supplier.id ? (
                             <input
-                              name="Precio"
+                              name="Telefono"
                               value={editedSuppliers.Telefono ?? ""}
                               onChange={handleChange}
-                              className="border rounded px-2 py-1 max-w-20"
+                              className="border rounded px-2 py-1 w-30"
                             />
                           ) : (
                             supplier.Telefono
@@ -145,10 +145,10 @@ export default function SuppliersList() {
                         <td className="px-4 py-2">
                           {editingId === supplier.id ? (
                             <input
-                              name="Cantidad"
+                              name="Correo"
                               value={editedSuppliers.Correo ?? ""}
                               onChange={handleChange}
-                              className="border rounded px-2 py-1 max-w-20"
+                              className="border rounded px-2 py-1"
                             />
                           ) : (
                             supplier.Correo
@@ -158,10 +158,10 @@ export default function SuppliersList() {
                         <td className="px-4 py-2">
                           {editingId === supplier.id ? (
                             <input
-                              name="Cantidad"
+                              name="Direccion"
                               value={editedSuppliers.Direccion ?? ""}
                               onChange={handleChange}
-                              className="border rounded px-2 py-1 max-w-20"
+                              className="border rounded px-2 py-1"
                             />
                           ) : (
                             supplier.Direccion

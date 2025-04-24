@@ -60,7 +60,7 @@ export const createProduct = async (product: Omit<Product,"id">) => {
 
 export const updateProduct = async (id: number, updateProduct: Partial<Product>) => {
   try {
-    const res = await api.put(`/products/${id}`, updateProduct);
+    const res = await api.patch(`/products/${id}`, updateProduct);
     return res.data;
   } catch (err) {
     console.log(err);

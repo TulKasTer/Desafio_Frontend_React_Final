@@ -7,7 +7,7 @@ export default function CategoriesPage() {
   return (
     <div className="flex min-h-screen">
       <SidebarComp />
-      <main className="main-content flex is-flex-direction-row is-flex-grow-1 p-8 mx-40 flex flex-col flex-grow space-y-4">
+      <main className="main-content is-flex-direction-row is-flex-grow-1 p-8 mx-40 flex flex-col flex-grow space-y-4">
         <CategoriesForm />
         <CategoriesList />
         <CategoryPieChart />

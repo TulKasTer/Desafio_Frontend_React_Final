@@ -48,7 +48,7 @@ export const createSupplier = async (supplier: Omit<Supplier,"id">) => {
 
 export const updateSupplier = async (id: number, updateSupplier: Partial<Supplier>) => {
   try {
-    const res = await api.put(`/suppliers/${id}`, updateSupplier);
+    const res = await api.patch(`/suppliers/${id}`, updateSupplier);
     return res.data;
   } catch (err) {
     console.log(err);
