@@ -13,11 +13,11 @@ export default function Inicio() {
           <div className="content text-2xl font-bold w-full">
 
             <div className="flex flex-col sm:flex-row gap-6 justify-between w-full">
-              <div className="flex-1 sm:max-w-[3000px] p-4 bg-white border border-gray-300 rounded-lg shadow-lg">
+              <div className="flex-1 sm:max-w-[6000px] p-4 bg-white border border-gray-300 rounded-lg shadow-lg">
                 <CategoryPieChart />
               </div>
 
-              <div className="flex-1 sm:max-w-[3000px] p-4 bg-white border border-gray-300 rounded-lg shadow-lg">
+              <div className="flex-1 sm:max-w-[6000px] p-4 bg-white border border-gray-300 rounded-lg shadow-lg">
                 <SuppliersPieChart />
               </div>
             </div>
