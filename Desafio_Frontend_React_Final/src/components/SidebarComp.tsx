@@ -23,7 +23,7 @@ export default function SidebarComp() {
         <SidebarItems>
           <SidebarItemGroup>
             <SidebarItem href="/products" icon={HiShoppingBag} className="text-white">
-              Products
+              Productos
             </SidebarItem>
             <SidebarItem href="/suppliers" icon={HiUser} className="text-white">
               Proveedores
